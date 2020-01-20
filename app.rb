@@ -7,7 +7,9 @@ class Chitter < Sinatra::Base
   end
 
   post '/api/post_peep' do
-
+    p params
+    redirect '/'
   end
+  
   run! if app_file == $0
 end
