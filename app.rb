@@ -18,5 +18,9 @@ class Chitter < Sinatra::Base
     redirect '/'
   end
 
+  get '/home' do
+    erb :'home/index'
+  end
+
   run! if app_file == $0
 end
