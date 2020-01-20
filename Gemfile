@@ -5,6 +5,7 @@ gem 'pg'
 
 group :test do
   gem 'rspec'
+  gem 'timecop'
   gem 'capybara'
   gem 'rubocop-rails'
   gem 'simplecov', require: false
