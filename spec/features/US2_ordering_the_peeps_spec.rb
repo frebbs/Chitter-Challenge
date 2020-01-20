@@ -13,7 +13,5 @@ feature "So that I can see what others are saying" do
     end
 
     expect(page.all(".content").map(&:text)).to eq(["My second peep! This is a new post, its a little longer!", "I peeped! Oh yes I did!"])
-
-
   end
 end
