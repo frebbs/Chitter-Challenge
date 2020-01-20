@@ -10,9 +10,9 @@ feature "I want to sign up for Chitter" do
   end
 
   it 'creates a new user account' do
-    visit '/'
-    click_link "Create Account"
+    visit '/home/signup'
     fill_in :email, with: "an_email@future.uk"
+    fill_in :username, with: "Lordship"
     fill_in :password, with: "shhhdonttell"
     fill_in :password2, with: "shhhdonttell"
     fill_in :f_name, with: "Lord"

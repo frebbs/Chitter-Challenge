@@ -1,6 +1,6 @@
 require "sinatra/base"
 require './lib/peep_model'
-
+require './lib/user_model'
 require_relative 'db_setup'
 
 class Chitter < Sinatra::Base
