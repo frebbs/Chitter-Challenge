@@ -5,6 +5,6 @@ feature "So that I can better appreciate the context of a peep" do
     fill_in :message, with: "Oh yes I did!"
     click_button "Peep"
 
-    expect(page).to have_content("Date created: 2020-01")
+    expect(page).to have_content("Date created: 2020-")
   end
 end
