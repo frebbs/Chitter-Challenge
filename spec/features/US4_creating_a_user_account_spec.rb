@@ -5,7 +5,7 @@ feature "I want to sign up for Chitter" do
   end
 
   it 'creates a new user account' do
-    visit '/home'
+    visit '/'
     click_link "Create Account"
     fill_in :email, with: "an_email@future.uk"
     fill_in :password, with: "shhhdonttell"
