@@ -6,7 +6,10 @@ require_relative 'db_setup'
 class Chitter < Sinatra::Base
 
   get '/' do
-    erb :index
+    p Peep.all
+    erb :index, :locals => {
+        peeps: Peep.all
+    }
   end
 
   post '/api/post_peep' do

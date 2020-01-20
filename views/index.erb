@@ -8,10 +8,22 @@
 </head>
 <body>
   <h1>Welcome to Chitter</h1>
-  <form action="/api/post_peep" method="post">
-    <input type="text" name="title">
-    <input type="text" name="content">
-    <input type="submit" value="Peep">
-  </form>
+  <div class="container">
+    <h2>Post your peep</h2>
+    <form action="/api/post_peep" method="post">
+      <input type="text" name="title">
+      <input type="text" name="message">
+      <input type="submit" value="Peep">
+    </form>
+  </div>
+
+<div class="container">
+  <h2>Previous Peeps</h2>
+  <ul>
+    <% peeps.each do |peep| %>
+    <li>Title: <%= peep.title %> <br>Message: <%= peep.content %></li>
+    <% end %>
+  </ul>
+</div>
 </body>
 </html>
