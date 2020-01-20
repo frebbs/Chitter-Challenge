@@ -8,15 +8,22 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 ])
 SimpleCov.start
 
+ENV['ENVIRONMENT'] = 'test'
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
+require 'capybara'
+require 'capybara/rspec'
+require 'rspec'
+require_relative './setup_testing_db'
+
+Capybara.app = Chitter
+
 RSpec.configure do |config|
 
-  ENV['ENVIRONMENT'] = 'test'
-  require File.join(File.dirname(__FILE__), '..', 'app.rb')
-  require 'capybara'
-  require 'capybara/rspec'
-  require 'rspec'
 
-  Capybara.app = Chitter
+
+  config.before(:each) do
+    setup_test_database
+  end
 
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = false
