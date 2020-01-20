@@ -21,8 +21,8 @@
   <h2>Previous Peeps</h2>
   <ul>
     <% peeps.each do |peep| %>
-    <li class="peep">Title: <%= peep.title %> <br>Message: <%= peep.message %><br>
-    Date created: <%= peep.created_at %></li>
+      <li class="peep">Title: <span class="title"><%= peep.title %></span> <br>Message: <%= peep.message %><br>
+        <span class="time">Date created: <%= peep.created_at %></span></li>
     <% end %>
   </ul>
 </div>

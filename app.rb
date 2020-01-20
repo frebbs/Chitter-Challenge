@@ -8,7 +8,7 @@ class Chitter < Sinatra::Base
   get '/' do
     p Peep.all
     erb :index, :locals => {
-        peeps: Peep.all
+        peeps: Peep.top_ten_reversed
     }
   end
 

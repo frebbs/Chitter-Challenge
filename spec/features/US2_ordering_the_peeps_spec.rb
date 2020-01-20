@@ -12,6 +12,6 @@ feature "So that I can see what others are saying" do
       click_button "Peep"
     end
 
-    expect(page.all(".content").map(&:text)).to eq(["My second peep! This is a new post, its a little longer!", "I peeped! Oh yes I did!"])
+    expect(page.all(".title").map(&:text)).to eq(["My second peep!", "I peeped!"])
   end
 end
