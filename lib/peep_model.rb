@@ -4,7 +4,7 @@ class Peep
   def initialize(id:, title:, message:)
     @id = id
     @title = title
-    @content = message
+    @message = message
   end
 
   def self.all
@@ -22,5 +22,5 @@ class Peep
     DBConnection.query("INSERT INTO peeps (title, message) VALUES('#{params['title']}', '#{params['message']}');")
   end
 
-  attr_reader :id, :title, :content
+  attr_reader :id, :title, :message
 end
