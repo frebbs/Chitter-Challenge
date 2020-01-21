@@ -7,7 +7,6 @@ class Chitter < Sinatra::Base
   enable :sessions
 
   get '/' do
-    p Peep.all
     erb :index, :locals => {
         peeps: Peep.top_ten_reversed
     }
@@ -25,8 +24,6 @@ class Chitter < Sinatra::Base
   end
 
   get '/home' do
-
-
     erb :'home/index', :locals => {
         :user => User.find_user(session['username'].to_s).username
     }
