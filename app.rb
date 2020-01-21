@@ -4,6 +4,7 @@ require './lib/user_model'
 require_relative 'db_setup'
 
 class Chitter < Sinatra::Base
+  enable :sessions
 
   get '/' do
     p Peep.all
@@ -12,14 +13,23 @@ class Chitter < Sinatra::Base
     }
   end
 
+  post '/api/create_account' do
+    session['username'] = params['username']
+    User.create(params)
+    redirect '/home'
+  end
+
   post '/api/post_peep' do
-    p params
     Peep.create(params)
     redirect '/'
   end
 
   get '/home' do
-    erb :'home/index'
+
+
+    erb :'home/index', :locals => {
+        :user => User.find_user(session['username'].to_s).username
+    }
   end
 
   get '/home/signup' do

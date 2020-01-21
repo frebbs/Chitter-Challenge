@@ -18,6 +18,6 @@ feature "I want to sign up for Chitter" do
     fill_in :f_name, with: "Lord"
     fill_in :l_name, with: "Aaron"
     click_button "Submit"
-    expect(page).to have_content("Hello Lord Aaron")
+    expect(page).to have_content("Hello Lordship")
   end
 end
