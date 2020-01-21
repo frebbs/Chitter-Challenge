@@ -21,7 +21,7 @@ class Peep
   end
 
   def self.top_ten_reversed
-    peeps = DBConnection.query("SELECT * FROM peeps ORDER BY created_at DESC LIMIT 5;")
+    peeps = DBConnection.query("SELECT * FROM peeps ORDER BY created_at DESC LIMIT 10;")
     peeps.map do |peep|
       Peep.new(
           id: peep['id'],
